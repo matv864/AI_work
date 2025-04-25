@@ -1,0 +1,179 @@
+,Date of the Crime,Defendants,Type of the Crime,Location of the Crime,Punishment for a crime,Legally Exonerated,Legally Exonerated Encoded
+0,1805,Dominic Daley and James Halligan,murder,Massachusetts,death,yes,1
+1,1843,John Gordon,murder,Rhode Island,death,yes,1
+2,1855,Chief Leschi,murder,Washington,death,no,0
+3,1863,Chipita Rodriguez,murder,Texas,death,yes,1
+4,1872,William Jackson Marion,murder,Nebraska,death,yes,1
+5,1886,"Oscar Neebe, August Spies, and Albert Parsons",haymarket affair,Illinois,15 years,yes,1
+6,1887,Charles Hudspeth,murder,Arkansas,death,yes,1
+7,1894,George Washington Davis,sabotage of Locomotive 213,Nebraska,,yes,1
+8,1896,Jack Davis,murder,Idaho,death,yes,1
+9,1900,Caleb Powers,murder,Kentucky,,yes,1
+10,1906,Ed Johnson,rape,Tennessee,death,yes,1
+11,1912,Bill Wilson,murder,Alabama,life in prison,yes,1
+12,1913,Thomas Griffin and Meeks Griffin,murder,South Carolina,death,yes,1
+13,1913,Leo Frank,murder,Georgia,death,yes,1
+14,1916,Thomas Mooney,preparedness Day Bombing,California,death,yes,1
+15,1920,Nicola Sacco and Bartolomeo Vanzet,murder,Massachusetts,death,yes,1
+16,1931,Scottsboro Boys,rape,Alabama,death,yes,1
+17,1932,Joseph Majczek and Theodore Marcinkiewicz,murder,Illinois,life in prison,yes,1
+18,1936,Joe Arridy,murder,Colorado,death,yes,1
+19,1944,George Stinney,murder,South Carolina,death,yes,1
+20,1957,Jack McCullough,murder,Illinois,5 years,yes,1
+21,1961,Clarence Earl Gideon,"breaking and entering, petty theft",Florida,5 years,yes,1
+22,1965,Muhammad Aziz and Khalil Islam,murder,New York,life in prison,yes,1
+23,1966,Rubin Carter,murder,New Jersey,life in prison,no,0
+24,1967,James Joseph Richardson,murder,Florida,death,yes,1
+25,1971,Richard Phillips,murder,Michigan,life without parole,yes,1
+26,1972,Anthony Mazza,murder,Massachusetts,life without parole,yes,1
+27,1972,Wilbert Jones,sexual assault,Louisiana,life in prison,yes,1
+28,1974,Gregory Bright,murder,Louisiana,life in prison,yes,1
+29,1974,Delbert Tibbs,murder,Florida,death,no,0
+30,1974,Michael Lloyd Self,murder,Texas,life in prison,no,0
+31,1975,David Bryant,murder,New York,25 years,yes,1
+32,1975,Ledura Watkins,murder,Michigan,life without parole,yes,1
+33,1975,"Ricky Jackson, Ronnie Bridgeman, and Wiley Bridgeman",murder,Ohio,death,yes,1
+34,1976,"Clifford Williams, Jr",murder,Florida,death,yes,1
+35,1976,Charles Ray Finch,murder,North Carolina,death,yes,1
+36,1976,Lewis Fogle,rape,Pennsylvania,life without parole,no,0
+37,1976,Randall Dale Adams,murder,Texas,death,no,0
+38,1977,Dewey Bozella,murder,New York,20 years,no,0
+39,1977,Brian Baldwin,murder,Alabama,death,no,0
+40,1977,Gary Dotson,rape,Illinois,50 years,yes,1
+41,1978,"The Ford Heights Four, Verneal Jimerson, Dennis Williams, Kenneth Adams and Willie Rainge",rape,Illinois,"death for Jimerson and Williams, 75 years for Adams, and life for Rainge",yes,1
+42,1978,Paula Gray,rape,Illinois,50 years,yes,1
+43,1978,Joseph Sledge,murder,North Carolina,life in prison,yes,1
+44,1978,Bobby Joe Maxwell,murder,North Carolina,life without parole,yes,1
+45,1978,Craig Coley,murder,California,life without parole,yes,1
+46,1979,Cornelius Dupree,"robbery, rape",Texas,75 years,yes,1
+47,1979,Kevin Strickland,murder,Missouri,life in prison,yes,1
+48,1980,Joyce Ann Brown,"murder, robbery",Texas,life in prison,yes,1
+49,1980,Kenneth Waters,murder,Massachusetts,life in prison,yes,1
+50,1980,Steve Titus,rape,Washington,,yes,1
+51,1980,Clarence Brandley,murder,Texas,death,no,0
+52,1980,Kern County child abuse cases,satanic ritual sex abuse,California,,yes,1
+53,1980,Cathy Woods,murder,Nevada,life without parole,yes,1
+54,1980,Claus von Bülow,murder,Rhode Island,30 years,no,0
+55,1981,Thomas Martin Thompson,"rape,  murder",California,death,no,0
+56,1981,Grover Thompson,murder,Illinois,40 years,yes,1
+57,1981,Raymond Towler,"assault, rape",Ohio,life in prison,yes,1
+58,1981,Gloria Killian,"murder, robbery, burglary",California,32 years,yes,1
+59,1981,Arthur Lee Whitfield,rape,Virginia,63 years,yes,1
+60,1981,Julius Ruffin,"rape, sodomy, robbery",Virginia,life in prison,yes,1
+61,1982,Anthony Porter,murder,Illinois,death,yes,1
+62,1982,Ron Williamson and Dennis Fritz,murder,Oklahoma,death,yes,1
+63,1982,Earl Washington Jr.,murder,Virginia,death,yes,1
+64,1982,Johnny Briscoe,"rape, robbery",Missouri,45 years,yes,1
+65,1983,Willie Earl Green,murder,California,33 years,no,0
+66,1983,Juan Roberto Melendez-Colon,murder,Florida,death,no,0
+67,1983,John Gordon Purvis,murder,Florida,life in prison,yes,1
+68,1983,Glenn Ford,murder,Louisiana,death,yes,1
+69,1983,Mary Ann and Joe Elizondo,child sexual abuse,Texas,35 years,yes,1
+70,1984,Anthony Capozzi,rape,New York,11-35 years,yes,1
+71,1984,Employees of Fells Acres Day Care,satanic ritual sex abuse,Massachusetts,,yes,1
+72,1984,Bernard Baran,sexual abuse of children,Massachusetts,life in prison,no,0
+73,1984,"Alfred Chestnut, Ransom Watkins, and Andrew Stewart Jr","murder, robbery, illegal use of a weapon",Maryland,life in prison,yes,1
+74,1984,Leroy Orange,murder,Illinois,death,yes,1
+75,1984,Kirk Bloodsworth,murder,Maryland,death,yes,1
+76,1984,Darryl Hunt,murder,North Carolina,life in prison,yes,1
+77,1984,Thomas Haynesworth,rape,Virginia,84 years,yes,1
+78,1984,John Thompson,"murder, carjacking",Louisiana,49 years,yes,1
+79,1985,Beatrice Six,murder,Nebraska,,yes,1
+80,1985,Anthony Ray Hinton,"murder, robbery",Alabama,death,yes,1
+81,1985,Dennis Perry,murder,Georgia,life in prison,no,0
+82,1985,Margaret Earle,murder,Massachusetts,life in prison,yes,1
+83,1985,Steven Avery,rape,Wisconsin,32 years,yes,1
+84,1985,Tim Cole,rape,Texas,25 years,yes,1
+85,1986,Johnny Lee Wilson,murder,Missouri,life in prison,yes,1
+86,1986,Michael Morton,murder,Texas,life in prison,yes,1
+87,1986,Santiago Ventura Morales,murder,Oregon,10 years,no,0
+88,1986,Kenny Richey,murder,Ohio,death,no,0
+89,1987,Glen Woodal,"sexual assault, sexual abuse, kidnapping, robbery",West Virginia,life in prison,yes,1
+90,1987,Tim Masters,murder,Colorado,life in prison,yes,1
+91,1987,Susie Mowbray,murder,Texas,life in prison,yes,1
+92,1987,Willie Grimes,"rape, kidnapping",North Carolina,life in prison,yes,1
+93,1987,Levon 'Bo' Jones,murder,North Carolina,death,no,0
+94,1988,James Calvin Tillman,rape,Connecticut,45 years,yes,1
+95,1988,Martin Tankleff,murder,New York,25 years,yes,1
+96,1988,Virginia LeFever,murder,Ohio,life in prison,yes,1
+97,1988,Chris Ochoa and Richard Danzinger,murder,Texas,life in prison,yes,1
+98,1988,Joseph Burrows,murder,Illinois,death,yes,1
+99,1989,Employees at the Little Rascals day care facility,satanic ritual sex abuse,North Carolina,7 years,no,0
+100,1989,"Central Park Five: Yusef Salaam, Antron McCray, Raymond Santana, Kevin Richardson and Korey Wise","assault, rape",New York,,yes,1
+101,1989,Sabrina Butler,murder,Mississippi,death,yes,1
+102,1989,Jeffrey Scott Hornoff,murder,Rhode Island,life in prison,yes,1
+103,1989,Debra Jean Milke,murder,Arizona,death,yes,1
+104,1989,Debbie Tucker Loveless and John Harvey Miller,murder,Texas,life in prison,yes,1
+105,1989,Patricia Stallings,murder,Missouri,life in prison,yes,1
+106,1989,Mark Denny,"sexual assault, robbery, other violent felony",New York,57 years,yes,1
+107,1990,Jeffrey Mark Deskovic,murder,New York,15 years,yes,1
+108,1991,Francisco 'Franky' Carrillo,murder,California,life in prison,no,0
+109,1991,John Bunn,murder,New York,7 years,yes,1
+110,1991,Dixmoor 5,murder,Illinois,,yes,1
+111,1991,Cameron Todd Willingham,murder,Texas,death,no,0
+112,1991,Ray Krone,murder,Arizona,death,yes,1
+113,1992,Three Fort Stewart soldiers,drive-by shooting,Georgia,life in prison,yes,1
+114,1992,Robert Jones,"rape, murder",Louisiana,life in prison,yes,1
+115,1992,Juan Rivera,murder,Illinois,life in prison,yes,1
+116,1993,Mary Weaver,murder,Iowa,life in prison,yes,1
+117,1993,Gary Gauger,murder,Illinois,death,yes,1
+118,1993,Lynn DeJac,murder,New York,25 years,yes,1
+119,1993,Mark Maxson,murder,Illinois,life in prison,yes,1
+120,1994,Dontae Sharpe,murder,North Carolina,life in prison,yes,1
+121,1994,Ken Wyniemko,"criminal sexual conduct, armed robbery",Michigan,60 years,yes,1
+122,1994,Michelle Murphy,murder,Oklahoma,life in prison,yes,1
+123,1995,Shareef Cousin,murder,Louisiana,death,no,0
+124,1995,Alan Gell,murder,North Carolina,death,no,0
+125,1995,Rosalynd Collier-Hammond,child sexual abuse,Ohio,life in prison,yes,1
+126,1996,Kristine Bunch,murder,Indiana,life in prison,yes,1
+127,1996,Christopher Tapp,"rape, murder",Indiana,30 years,yes,1
+128,1996,Richard Alexander,rape,Indiana,20 years,yes,1
+129,1997,Fancy Figueroa,filing a false report,New York,community service,yes,1
+130,1997,"Norfolk Four: Derek Tice, Danial Williams, Joseph J. Dick Jr., and Eric C. Wilson","rape, murder",Virginia,8 years,yes,1
+131,1997,Julie Rea Harper,murder,Illinois,65 years,yes,1
+132,1998,Clarence Elkins,"murder, rape",Ohio,life in prison,yes,1
+133,1998,Luis Vargas,"sexual assault, kidnapping",California,55 years,yes,1
+134,1999,Brandy Briggs,child abuse,Texas,17 years,yes,1
+135,2000,David Camm,murder,Indiana,life in prison,yes,1
+136,2001,Kirstin 'Blaise' Lobato,murder,Nevada,life in prison,yes,1
+137,2001,Ryan Ferguson,murder,Missouri,40 years,yes,1
+138,2002,Melinda Bronson,child sexual abuse,New York,"probation, lifetime sex offender registration",yes,1
+139,2002,Brian Banks,rape,California,6 years,yes,1
+140,2003,Julie Baumer,child sexual abuse,Michigan,15 years,yes,1
+141,2004,Melonie Ware,murder,Georgia,life in prison,yes,1
+142,2004,Richard and Megan Winfrey,murder,Texas,life in prison,yes,1
+143,2005,Richard Gagnon,murder,South Carolina,life in prison,no,0
+144,2005,Lamar Johnson,murder,Maryland,life in prison,yes,1
+145,2005,Nicole Harris,murder,Illinois,30 years,yes,1
+146,2006,Tammy Smith,child sexual abuse,Iowa,10 years,yes,1
+147,2007,Susan King,manslaughter,Kentucky,10 years,yes,1
+148,2007,Raymond McCann,"rape, murder",Michigan,22 years,yes,1
+149,2008,Stephanie Spurgeon,manslaughter of infant,Florida,20 years,yes,1
+150,2008,Adrian P. Thomas,murder,New York,life in prison,yes,1
+151,2009,Melissa Calusinski,murder,Illinois,present,no,0
+152,2010,Deron Parks,child sex abuse,Washington,life in prison,yes,1
+153,2010,Patrick McAllister,sexual assault,Washington,21 years,yes,1
+154,2010,Aisha McClinton,weapon possession or sale,Illinois,0.5 years,yes,1
+155,2010,Eric Anderson,"robbery, assault, illegal use of a weapon",Michigan,22 years,yes,1
+156,2011,Otis Boone,robbery,New York,25 years,yes,1
+157,2011,Livingston Broomes,sexual assault,New York,4 years,yes,1
+158,2011,Jennifer Weathington,"murder, assault, illegal use of a weapon",Georgia,life in prison,yes,1
+159,2011,Elgerie Cash,"murder, assault, illegal use of a weapon",Georgia,life in prison,yes,1
+160,2011,Matthew Ngov,murder,California,57 years,yes,1
+161,2011,Heidi Haischer,fraud,Nevada,1.2 year,yes,1
+162,2011,Lydia Salce,murder,New York,16 years,yes,1
+163,2012,Jasmine Eskew,felony assault of a child,Montana,5 years,yes,1
+164,2012,Michael Winston,"attempted murder, robbery, assault, kidnapping",Wisconsin,26 years,yes,1
+165,2013,James Frazier,"murder, other violent felony, conspiracy",Pennsylvania,life without parole,yes,1
+166,2013,Clarens Desrouleaux,theft,Florida,5 years,yes,1
+167,2013,Jesus Sanchez,murder,Illinois,45 years,yes,1
+168,2013,Sherman McCoy,"murder, gun possession or sale and conspiracy",Pennsylvania,life without parole,yes,1
+169,2013,Greg Kelley,child sex abuse,Texas,25 years,yes,1
+170,2014,Courtney Hayden,murder,Texas,40 years,yes,1
+171,2014,Maurice Hopkins,sexual assault,Arkansas,12.5 years,yes,1
+172,2014,Arthur Morris and Jeanie Becerra,assault,Kansas,not sentenced,yes,1
+173,2016,Tazell Cash,"robbery, other violent felony",Michigan,20 years,yes,1
+174,2017,Alex Heineman,sexual assault,Wisconsin,,yes,1
+175,2017,Michael Hickingbottom,assault,Indiana,6 years,yes,1
+176,2017,Joshua Horner,child sex abuse,Oregon,50 years,yes,1
+177,2017,Brenda Jones,arson,Wisconsin,9 months,yes,1
