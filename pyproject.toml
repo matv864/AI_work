@@ -20,5 +20,6 @@ dependencies = [
     "scikit-optimize>=0.10.2",
     "seaborn>=0.13.2",
     "statsmodels>=0.14.4",
+    "torch>=2.7.0",
     "xgboost>=3.0.2",
 ]
