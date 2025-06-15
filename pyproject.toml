@@ -14,6 +14,7 @@ dependencies = [
     "nbformat>=5.10.4",
     "numpy>=2.2.5",
     "opencv-python>=4.11.0.86",
+    "openpyxl>=3.1.5",
     "pandas>=2.2.3",
     "pynvml>=12.0.0",
     "ruff>=0.11.7",
