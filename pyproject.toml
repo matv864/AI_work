@@ -22,6 +22,7 @@ dependencies = [
     "scikit-optimize>=0.10.2",
     "seaborn>=0.13.2",
     "statsmodels>=0.14.4",
+    "tensorflow>=2.20.0",
     "torch>=2.7.0",
     "torchvision>=0.22.0",
     "transformers>=4.56.2",
