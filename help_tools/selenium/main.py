@@ -3,9 +3,10 @@ import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchWindowException, WebDriverException
 import clipboard
-
-
+import keyboard
+import winsound
 
 # # set up the driver in headless mode
 # options = uc.ChromeOptions()
@@ -19,14 +20,22 @@ driver = uc.Chrome(browser_executable_path=chrome_path, options=options)
 
 def work_with_page(link: str) -> None:
     driver.get(link)
-    WebDriverWait(driver, 2).until(
-        EC.presence_of_element_located((By.XPATH, "//h1[@class='mt-0']"))
-    )
+    try:
+        WebDriverWait(driver, 3).until(
+            EC.presence_of_element_located((By.XPATH, "//h1[@class='mt-0']"))
+        )
+    except Exception:
+        print("программа не смогла найти заголовок, дальше?????")
+        winsound.Beep(2000, 3000)
+        keyboard.wait('esc')
+        return
     element = driver.find_element(By.XPATH, "//h1[@class='mt-0']")
     print(element.text)
     text_to_clipboard = f"{element.text} {link}"
     clipboard.copy(text_to_clipboard)
-    input("дальше?")
+    print("дальше? ESC")
+    [winsound.Beep(2000, 500) for _ in range(2)]
+    keyboard.wait('esc')
    
 
 with open("list.txt") as F:
@@ -36,6 +45,7 @@ for link in w:
         print(link)
         work_with_page(link)
     else:
+        [winsound.Beep(4000, 1000) for _ in range(7)]
         print(("!!!!!!!!!"*10 + "\n")*5)
         print("НОВАЯ ДАТА")
         print(link)
