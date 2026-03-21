@@ -9,3 +9,7 @@ wheels/
 
 # venv
 .venv
+data/
+
+# ipynb
+.ipynb_checkpoints
