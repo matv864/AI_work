@@ -42,4 +42,7 @@ dependencies = [
     "pydantic-settings>=2.12.0",
     "keyboard>=0.13.5",
     "portion>=2.6.1",
+    "whisper>=1.1.10",
+    "librosa>=0.11.0",
+    "soundfile>=0.13.1",
 ]
