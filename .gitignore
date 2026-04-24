@@ -13,3 +13,7 @@ data/
 
 # ipynb
 .ipynb_checkpoints
+
+
+# my temp
+temp/
