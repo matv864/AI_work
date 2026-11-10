@@ -120,19 +120,51 @@ CREATE TABLE IF NOT EXISTS games (
     FOREIGN KEY (start_id) REFERENCES starts(start_id)
 );
 
--- Таблица opponent_club: клубная карточка соперника (одна строка = карточка одного соперника).
--- Связь с opponents 1:1: opponent_id здесь одновременно PRIMARY KEY и FOREIGN KEY,
--- поэтому у соперника не может быть двух карточек. Карточка есть не у всех соперников.
+-- Таблица opponent_club: одна строка — одна клубная карточка соперника.
+-- Связь с opponents 1:N: opponent_id здесь только внешний ключ,
+-- поэтому у одного соперника может быть несколько карточек.
+-- У каждой карточки ровно один соперник. Пара «соперник + клуб» не повторяется.
 -- | Поле        | Что означает                                      | Тип данных   |
--- | opponent_id | соперник, первичный ключ и ссылка на opponents    | INTEGER      |
--- | club_card   | номер клубной карточки, не повторяется            | INTEGER      |
+-- | record_id   | номер карточки, первичный ключ                    | INTEGER      |
+-- | opponent_id | соперник, ссылка на opponents                     | INTEGER      |
+-- | club_name   | имя клуба, уникально у одного соперника           | VARCHAR(40)  |
 -- | club_rating | рейтинг по клубной классификации                  | INTEGER      |
+-- | country     | страна клуба                                      | VARCHAR(40)  |
 -- | city        | город клуба                                       | VARCHAR(40)  |
 CREATE TABLE IF NOT EXISTS opponent_club (
-    opponent_id INTEGER PRIMARY KEY,
-    club_card INTEGER NOT NULL UNIQUE,
+    record_id INTEGER PRIMARY KEY,
+    opponent_id INTEGER NOT NULL,
+    club_name VARCHAR(40) NOT NULL,
     club_rating INTEGER,
+    country VARCHAR(40),
     city VARCHAR(40),
+    UNIQUE (opponent_id, club_name),
+    FOREIGN KEY (opponent_id) REFERENCES opponents(opponent_id)
+);
+
+-- Таблица opponent_comment: комментарий игрока о сопернике.
+-- Связь с opponents 1:1: opponent_id здесь одновременно PRIMARY KEY и FOREIGN KEY,
+-- поэтому о сопернике не может быть двух комментариев. Комментарий есть не про всех.
+-- | Поле        | Что означает                         | Тип данных   |
+-- | opponent_id | соперник, ссылка на opponents        | INTEGER      |
+-- | comment     | комментарий игрока об этом сопернике | VARCHAR(300) |
+CREATE TABLE IF NOT EXISTS opponent_comment (
+    opponent_id INTEGER PRIMARY KEY,
+    comment VARCHAR(300),
+    FOREIGN KEY (opponent_id) REFERENCES opponents(opponent_id)
+);
+
+-- Таблица player_opponents: с кем игрок вообще встречался.
+-- Связь players–opponents M:N. Первичный ключ составной, одна и та же пара не повторяется.
+-- Партии лежат отдельно в games: с одним соперником их может быть много.
+-- | Поле        | Что означает                                          | Тип данных |
+-- | player_id   | игрок, вместе с opponent_id входит в первичный ключ   | INTEGER    |
+-- | opponent_id | соперник, вместе с player_id входит в первичный ключ  | INTEGER    |
+CREATE TABLE IF NOT EXISTS player_opponents (
+    player_id INTEGER NOT NULL,
+    opponent_id INTEGER NOT NULL,
+    PRIMARY KEY (player_id, opponent_id),
+    FOREIGN KEY (player_id) REFERENCES players(player_id),
     FOREIGN KEY (opponent_id) REFERENCES opponents(opponent_id)
 );
 
@@ -187,12 +219,25 @@ INSERT IGNORE INTO games VALUES
 (23, 1, 4, 5, '2026-10-06', 'second', 'loss', 'blitz',       1668, 1700, 'online', 22, 150),
 (24, 1, 5, 3, '2026-10-08', 'second', 'draw', 'tournament',  1665, 1785, 'online', 38, 1100),
 (25, 1, 3, 7, '2026-10-09', 'first',  'win',  'blitz',       1660, 1200, 'online', 4, 170);
--- Номера карточек вымышленные. У Чена (3) и Волкова (4) карточки нет: они играют только онлайн.
+-- Клубные карточки вымышленные. У Морозова две карточки, в разных клубах.
+-- У Чена (3), Волкова (4) и Сафина (5) карточки нет.
 INSERT IGNORE INTO opponent_club VALUES
-(1, 100245, 1480, 'Хабаровск'),
-(2, 100318, 1390, 'Хабаровск'),
-(5, 100502, 1510, 'Владивосток'),
-(6, 100611, 1360, 'Хабаровск');
+(1, 1, 'Хабаровцы', 1480, 'Россия', 'Хабаровск'),
+(2, 2, 'Хабаровцы', 1390, 'Россия', 'Хабаровск'),
+(3, 1, 'Морские волки', 1510, 'Россия', 'Владивосток'),
+(4, 6, 'Хабаровцы', 1360, 'Россия', 'Хабаровск');
+
+-- Комментарий есть не у всех. У Чена и Волкова записи нет.
+INSERT IGNORE INTO opponent_comment VALUES
+(1, 'В клубе на дубле-шесть я ему чаще проигрываю'),
+(2, 'В обычном формате играет ровно, ничьих много'),
+(5, 'Онлайн-соперник без клубной карточки, в турнире у меня перевес'),
+(6, 'В блице против неё ошибок почти нет');
+
+-- Пары «игрок — соперник» из уже сыгранных партий. Повтор не вставится.
+INSERT IGNORE INTO player_opponents (player_id, opponent_id)
+SELECT DISTINCT player_id, opponent_id
+FROM games;
 
 
 -- ============================================
@@ -274,30 +319,45 @@ ORDER BY opponent_wins DESC;
 -- 4. НОВЫЙ JOIN ДЛЯ ПРАКТИКИ № 2
 -- ============================================
 -- Связи в проекте:
--- 1:1  opponents - opponent_club: у одного соперника не больше одной клубной карточки,
---      а один номер карточки принадлежит только одному сопернику.
+-- 1:1  opponents - opponent_comment: у одного соперника не больше одного комментария,
+--      потому что opponent_id в opponent_comment одновременно первичный и внешний ключ.
+--      Комментарий есть не у всех.
+-- 1:N  opponents - opponent_club: у одного соперника несколько клубных карточек,
+--      у каждой карточки ровно один соперник. Пара «соперник + клуб» не повторяется.
 -- 1:N  starts - games: с одной стартовой костью сыграно много партий, у каждой партии одна стартовая кость.
 -- 1:N  opponents - games: с одним соперником много партий, в каждой партии один соперник.
 -- 1:N  players - games: у игрока много партий, каждая партия принадлежит одному игроку.
--- M:N  players - opponents: игрок играет со многими соперниками, соперник - со многими
---      игроками; промежуточная таблица - games (две связи 1:N).
+-- M:N  players - opponents: игрок встречается со многими соперниками, соперник — со многими игроками.
+--      Промежуточная таблица — player_opponents, первичный ключ составной (player_id, opponent_id),
+--      поэтому одну и ту же пару второй раз записать нельзя. Партии лежат в games.
 
--- Вопрос: какой результат у меня против каждого соперника и есть ли у него клубная карточка?
+-- Вопрос: какой у меня результат против каждого соперника, в каких он клубах и что я о нём записал?
 SELECT
     op.full_name AS opponent,
-    c.club_card,
+    c.club_name,
+    c.city,
     c.club_rating,
+    cm.comment,
     COUNT(g.game_id) AS games_played,
     ROUND(100 * AVG(CASE g.result WHEN 'win' THEN 1 WHEN 'draw' THEN 0.5 ELSE 0 END), 1) AS score_pct
 FROM opponents op
 LEFT JOIN opponent_club c ON c.opponent_id = op.opponent_id
-JOIN games g ON g.opponent_id = op.opponent_id
-GROUP BY op.opponent_id, op.full_name, c.club_card, c.club_rating
+LEFT JOIN opponent_comment cm ON cm.opponent_id = op.opponent_id
+LEFT JOIN games g ON g.opponent_id = op.opponent_id
+GROUP BY op.opponent_id, op.full_name, c.record_id, c.club_name, c.city, c.club_rating, cm.comment
 ORDER BY c.club_rating DESC;
--- Объяснение: связал opponents и opponent_club по opponent_id (связь 1:1) через LEFT JOIN,
--- чтобы не потерять соперников без клубной карточки, и opponents с games по opponent_id (1:N).
--- Получаю по каждому сопернику число партий и мой процент очков рядом с его клубным рейтингом.
--- Использую связь 1:1, потому что клубная карточка - отдельный профиль, который есть не у всех соперников.
+-- Объяснение: связал opponents и opponent_club по opponent_id через LEFT JOIN (связь 1:N),
+-- opponents и opponent_comment по opponent_id через LEFT JOIN (связь 1:1),
+-- opponents и games по opponent_id (связь 1:N).
+-- Результат: у Морозова две клубные карточки — «Морские волки» во Владивостоке (1510)
+-- и «Хабаровцы» (1480). Против него 5 партий и 20% очков, комментарий один на обе строки.
+-- У Егоровой 4 партии и 75%, у Григорьевой 3 партии и 100%.
+-- У Чена, Волкова и Сафина клуба нет: у Чена 40% очков и комментария нет,
+-- у Волкова 37.5% и комментария нет, у Сафина 4 партии, 62.5% и комментарий есть.
+-- Использую связь 1:1, потому что комментарий — отдельная запись на соперника, и она есть не у всех:
+-- внутренний JOIN убрал бы Чена и Волкова.
+-- Использую связь 1:N, потому что у одного соперника бывает несколько клубов,
+-- и каждая карточка должна остаться отдельной строкой.
 
 SELECT
     s.start_name,
@@ -314,14 +374,19 @@ GROUP BY s.start_name
 HAVING (first_score_pct > second_score_pct OR second_score_pct = NULL);
 --
 
+-- Вопрос: у кого из соперников нет клубной карточки и оставлен ли о нём комментарий?
 SELECT
     op.full_name AS opponent,
-    c.club_card,
-    c.club_rating,
-    COUNT(g.game_id) AS games_played,
-    ROUND(100 * AVG(CASE g.result WHEN 'win' THEN 1 WHEN 'draw' THEN 0.5 ELSE 0 END), 1) AS score_pct
+    cm.comment
 FROM opponents op
 LEFT JOIN opponent_club c ON c.opponent_id = op.opponent_id
-JOIN games g ON g.opponent_id = op.opponent_id
-WHERE c.club_card IS NULL
-GROUP BY op.opponent_id, op.full_name, c.club_card, c.club_rating;
+LEFT JOIN opponent_comment cm ON cm.opponent_id = op.opponent_id
+WHERE c.record_id IS NULL
+ORDER BY op.full_name;
+-- Объяснение: связал opponents с opponent_club по opponent_id через LEFT JOIN
+-- и оставил строки, где карточки нет (c.record_id IS NULL).
+-- Комментарий присоединил той же связью 1:1.
+-- Результат: без клуба Чен Артём и Волков Денис, комментария у них тоже нет,
+-- и Сафин Ильяс — клуба нет, комментарий есть.
+-- Использую связь 1:N, потому что отсутствие карточки видно только если сохранить соперника,
+-- даже когда справа в opponent_club пусто.

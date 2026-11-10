@@ -46,4 +46,5 @@ dependencies = [
     # "sentencepiece>=0.2.1",
     # "tf-keras>=2.20.1",
     # "speechbox>=0.2.1",
+    "pymysql>=1.2.4",
 ]
