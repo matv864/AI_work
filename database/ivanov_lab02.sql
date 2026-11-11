@@ -51,8 +51,10 @@
 -- ============================================
 
 -- IF NOT EXISTS: если база уже есть, новая не создаётся, и повторный запуск не падает.
-CREATE DATABASE IF NOT EXISTS ivanov_lab02;
-USE ivanov_lab02;
+CREATE DATABASE IF NOT EXISTS p2_student_demo
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+USE p2_student_demo;
 
 -- Таблица players: игроки, чьи партии разбираются (ученики тренера).
 -- | Поле        | Что означает                 | Тип данных   |
